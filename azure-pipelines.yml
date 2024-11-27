@@ -25,5 +25,5 @@ steps:
       pythonUploadServiceConnection: PyPi
   
   - script: |
-      python -m twine upload -r PyPi --config-file $(PYPIRC_PATH) dist/*
+      python -m twine upload -r PyPi --config-file $(PYPIRC_PATH) dist/* --verbose
     displayName: 'Upload to feed'
