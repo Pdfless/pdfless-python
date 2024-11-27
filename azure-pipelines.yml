@@ -26,4 +26,4 @@ steps:
   
   - script: |
       python -m twine upload -r PyPi --config-file $(PYPIRC_PATH) dist/*.whl
-      displayName: 'Upload to feed'
+    displayName: 'Upload to feed'
