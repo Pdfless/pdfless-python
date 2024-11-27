@@ -17,7 +17,7 @@ steps:
     displayName: 'Install dependencies'
 
   - script: |
-      python setup.py sdist
+      python setup.py --version $(major).$(minor).$(Build.BuildId) sdist
     displayName: "Create dist"
 
   - task: TwineAuthenticate@1
@@ -25,5 +25,5 @@ steps:
       pythonUploadServiceConnection: PyPi
   
   - script: |
-      python -m twine upload -r PyPi --version $(major).$(minor).$(Build.BuildId) --config-file $(PYPIRC_PATH) dist/* --verbose
+      python -m twine upload -r PyPi --config-file $(PYPIRC_PATH) dist/* --verbose
     displayName: 'Upload to feed'
