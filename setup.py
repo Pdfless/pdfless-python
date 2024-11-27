@@ -14,6 +14,13 @@
 
 
 from setuptools import setup, find_packages  # noqa: H301
+import sys
+
+####### get version from arguments start ##########
+index = sys.argv.index('--version')
+sys.argv.pop(index)
+version = sys.argv.pop(index)
+####### get version from arguments end ##########
 
 # To install the library, run the following
 #
@@ -22,7 +29,7 @@ from setuptools import setup, find_packages  # noqa: H301
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 NAME = "pdfless-api"
-VERSION = "1.0.2"
+VERSION = version
 PYTHON_REQUIRES = ">= 3.8"
 REQUIRES = [
     "urllib3 >= 1.25.3, < 3.0.0",
