@@ -1,0 +1,26 @@
+trigger: none
+
+variables:
+- group: version
+- group: pypi
+
+steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.12'
+    displayName: 'Use Python 3.12'
+  - script: |
+      python -m pip install --upgrade pip
+      pip install -r requirements.txt
+      pip install twine
+    displayName: 'Install dependencies'
+  - script: |
+      python setup.py sdist
+    displayName: "Create dist"
+
+  - task: TwineAuthenticate@1
+    inputs:
+      pythonUploadServiceConnection: PyPi
+  
+  - script: |
+      python -m twine upload -r "PyPi" --config-file $(PYPIRC_PATH) dist/*
