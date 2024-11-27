@@ -1,7 +1,6 @@
 .github/workflows/python.yml
 .gitignore
 .gitlab-ci.yml
-.openapi-generator-ignore
 .travis.yml
 README.md
 docs/ApiExceptionDetailsResult.md
@@ -38,13 +37,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_api_exception_details_result.py
-test/test_document_template_dto.py
-test/test_document_templates_api.py
-test/test_generate_pdf_command.py
-test/test_pdf_dto.py
-test/test_pdf_dto_api_result.py
-test/test_pdfs_api.py
-test/test_workspace_dto.py
-test/test_workspaces_api.py
 tox.ini

@@ -98,7 +98,7 @@ class PDFsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "PDFDtoApiResult",
+            '200': "PDFDtoApiResult",
             '500': "ApiExceptionDetailsResult",
         }
         response_data = self.api_client.call_api(
@@ -170,7 +170,7 @@ class PDFsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "PDFDtoApiResult",
+            '200': "PDFDtoApiResult",
             '500': "ApiExceptionDetailsResult",
         }
         response_data = self.api_client.call_api(
@@ -242,7 +242,7 @@ class PDFsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "PDFDtoApiResult",
+            '200': "PDFDtoApiResult",
             '500': "ApiExceptionDetailsResult",
         }
         response_data = self.api_client.call_api(
