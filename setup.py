@@ -17,13 +17,13 @@ from setuptools import setup, find_packages  # noqa: H301
 import sys
 
 ####### get version from arguments start ##########
-version = None
-if '--version' in sys.argv:
-    index = sys.argv.index('--version')
-    sys.argv.pop(index)
-    version = sys.argv.pop(index)
-else:
-    version = "1.0.0"
+# version = None
+# if '--version' in sys.argv:
+#     index = sys.argv.index('--version')
+#     sys.argv.pop(index)
+#     version = sys.argv.pop(index)
+# else:
+#     version = "1.0.0"
 ####### get version from arguments end ##########
 
 # To install the library, run the following
@@ -44,7 +44,7 @@ REQUIRES = [
 
 setup(
     name=NAME,
-    version=VERSION,
+    version="1.1.0",
     description="Pdfless API",
     author="Pdfless support team",
     author_email="contact@pdfless.com",
