@@ -33,7 +33,10 @@ import pdfless_api
 from pdfless_api.rest import ApiException
 from pprint import pprint
 
-configuration = pdfless_api.Configuration()
+configuration = pdfless_api.Configuration(
+    host = "https://api.pdfless.com",
+    api_key= {'PdflessApiKey': 'ak_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx'}
+)
 
 # Enter a context with an instance of the API client
 with pdfless_api.ApiClient(configuration) as api_client:
@@ -45,12 +48,20 @@ with pdfless_api.ApiClient(configuration) as api_client:
 
         command = pdfless_api.GeneratePDFCommand(
             template_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
-            payload= "{}"
+            payload= {
+                "string_variable": "value1", 
+                "int_variable": 1, 
+                "bool_variable": True, 
+                "object": {
+                    "child_variable": "child_value", 
+                    "string_list": [
+                        "item1",
+                        "item2",
+                        "item3"
+                    ]
+                }
+            }
         )
-
-        header_params = {
-            'apikey': "ak_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx"
-        }
 
         # Generate PDF
         api_response = api_instance.generate(version, command)

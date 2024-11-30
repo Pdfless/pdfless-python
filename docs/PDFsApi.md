@@ -25,10 +25,9 @@ from pdfless_api.models.pdf_dto_api_result import PDFDtoApiResult
 from pdfless_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pdfless_api.Configuration(
-    host = "http://localhost"
+    host = "https://api.pdfless.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -39,14 +38,11 @@ configuration = pdfless_api.Configuration(
 # Configure API key authorization: PdflessApiKey
 configuration.api_key['PdflessApiKey'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['PdflessApiKey'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with pdfless_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pdfless_api.PDFsApi(api_client)
-    version = 'version_example' # str | 
+    version = '1' # str | 
     generate_pdf_command = pdfless_api.GeneratePDFCommand() # GeneratePDFCommand |  (optional)
 
     try:
