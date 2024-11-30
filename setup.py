@@ -17,9 +17,13 @@ from setuptools import setup, find_packages  # noqa: H301
 import sys
 
 ####### get version from arguments start ##########
-index = sys.argv.index('--version')
-sys.argv.pop(index)
-version = sys.argv.pop(index)
+version = None
+if '--version' in sys.argv:
+    index = sys.argv.index('--version')
+    sys.argv.pop(index)
+    version = sys.argv.pop(index)
+else:
+    version = "1.0.0"
 ####### get version from arguments end ##########
 
 # To install the library, run the following
