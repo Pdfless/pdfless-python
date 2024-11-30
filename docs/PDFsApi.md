@@ -16,6 +16,7 @@ Generate document based on template ID and payload data
 
 ### Example
 
+* Api Key Authentication (PdflessApiKey):
 
 ```python
 import pdfless_api
@@ -30,6 +31,16 @@ configuration = pdfless_api.Configuration(
     host = "http://localhost"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: PdflessApiKey
+configuration.api_key['PdflessApiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['PdflessApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with pdfless_api.ApiClient(configuration) as api_client:
@@ -63,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[PdflessApiKey](../README.md#PdflessApiKey)
 
 ### HTTP request headers
 

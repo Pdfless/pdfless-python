@@ -318,6 +318,7 @@ class DocumentTemplatesApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'PdflessApiKey'
         ]
 
         return self.api_client.param_serialize(

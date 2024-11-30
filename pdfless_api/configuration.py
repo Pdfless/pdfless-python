@@ -394,13 +394,13 @@ conf = pdfless_api.Configuration(
         :return: The Auth Settings information dict.
         """
         auth = {}
-        if 'PdflessAPIKeyAuth' in self.api_key:
-            auth['PdflessAPIKeyAuth'] = {
+        if 'PdflessApiKey' in self.api_key:
+            auth['PdflessApiKey'] = {
                 'type': 'api_key',
                 'in': 'header',
                 'key': 'apikey',
                 'value': self.get_api_key_with_prefix(
-                    'PdflessAPIKeyAuth',
+                    'PdflessApiKey',
                 ),
             }
         return auth
