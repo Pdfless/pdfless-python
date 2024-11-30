@@ -14,7 +14,7 @@ from setuptools import setup, find_packages  # noqa: H301
 import sys
 
 # Read README.md
-with open("README.md", "r", encoding="utf-8") as fh:
+with open("README_PY.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 ####### get version from arguments start ##########
@@ -34,7 +34,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 NAME = "pdfless-api"
-VERSION = "1.1.1"
+VERSION = "1.1.2"
 PYTHON_REQUIRES = ">= 3.8"
 REQUIRES = [
     "urllib3 >= 1.25.3, < 3.0.0",
