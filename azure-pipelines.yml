@@ -17,7 +17,7 @@ steps:
     displayName: 'Install dependencies'
 
   - script: |
-      python setup.py --version $(major).$(minor).$(Build.BuildId) sdist
+      python setup.py sdist
     displayName: "Create dist"
 
   - task: TwineAuthenticate@1
